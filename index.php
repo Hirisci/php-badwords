@@ -4,7 +4,9 @@ Stampare a schermo il paragrafo e la sua lunghezza.<br>
 Una parola da censurare viene passata dall'utente tramite parametro GET.<br>
 Stampare di nuovo il paragrafo e la sua lunghezza, dopo aver sostituito con tre asterischi (***) tutte le occorrenze della parola da censurare.<br>";
 
-$text_censurato = str_replace("parola", "***", $text);
+$censored_word = $_GET["censored"];
+
+$text_censurato = str_replace($censored_word, "***", $text);
 
 
 ?>
@@ -28,7 +30,7 @@ $text_censurato = str_replace("parola", "***", $text);
         </p>
     </div>
     <div class="box">
-        <h3>Testo cesurato</h3>
+        <h3>Testo cesurato </h3>
         <div>Numero caratteri <span><?= strlen($text_censurato) ?></span></div>
         <p>
             <?= $text_censurato ?>
